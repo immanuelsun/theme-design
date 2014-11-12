@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Simone
+ * @package my-simone
  */
 
 /**
@@ -13,11 +13,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function simone_page_menu_args( $args ) {
+function my_simone_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'simone_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'my_simone_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', 'simone_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function simone_body_classes( $classes ) {
+function my_simone_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -33,7 +33,7 @@ function simone_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'simone_body_classes' );
+add_filter( 'body_class', 'my_simone_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -42,11 +42,11 @@ add_filter( 'body_class', 'simone_body_classes' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function simone_wp_title( $title, $sep ) {
+function my_simone_wp_title( $title, $sep ) {
 	if ( is_feed() ) {
 		return $title;
 	}
-
+	
 	global $page, $paged;
 
 	// Add the blog name
@@ -59,13 +59,13 @@ function simone_wp_title( $title, $sep ) {
 	}
 
 	// Add a page number if necessary:
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'simone' ), max( $paged, $page ) );
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', 'my-simone' ), max( $paged, $page ) );
 	}
 
 	return $title;
 }
-add_filter( 'wp_title', 'simone_wp_title', 10, 2 );
+add_filter( 'wp_title', 'my_simone_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -79,11 +79,11 @@ add_filter( 'wp_title', 'simone_wp_title', 10, 2 );
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function simone_setup_author() {
+function my_simone_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'simone_setup_author' );
+add_action( 'wp', 'my_simone_setup_author' );

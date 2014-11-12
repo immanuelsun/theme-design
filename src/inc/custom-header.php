@@ -7,42 +7,42 @@
 
 	<?php if ( get_header_image() ) : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 	</a>
 	<?php endif; // End header image check. ?>
 
  *
- * @package Simone
+ * @package my-simone
  */
 
 /**
- * Set up the WordPress core custom header feature.
+ * Setup the WordPress core custom header feature.
  *
- * @uses simone_header_style()
- * @uses simone_admin_header_style()
- * @uses simone_admin_header_image()
+ * @uses my_simone_header_style()
+ * @uses my_simone_admin_header_style()
+ * @uses my_simone_admin_header_image()
  */
-function simone_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'simone_custom_header_args', array(
+function my_simone_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'my_simone_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'simone_header_style',
-		'admin-head-callback'    => 'simone_admin_header_style',
-		'admin-preview-callback' => 'simone_admin_header_image',
+		'wp-head-callback'       => 'my_simone_header_style',
+		'admin-head-callback'    => 'my_simone_admin_header_style',
+		'admin-preview-callback' => 'my_simone_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'simone_custom_header_setup' );
+add_action( 'after_setup_theme', 'my_simone_custom_header_setup' );
 
-if ( ! function_exists( 'simone_header_style' ) ) :
+if ( ! function_exists( 'my_simone_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see simone_custom_header_setup().
+ * @see my_simone_custom_header_setup().
  */
-function simone_header_style() {
+function my_simone_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -69,21 +69,21 @@ function simone_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
+			color: #<?php echo $header_text_color; ?>;
 		}
 	<?php endif; ?>
 	</style>
 	<?php
 }
-endif; // simone_header_style
+endif; // my_simone_header_style
 
-if ( ! function_exists( 'simone_admin_header_style' ) ) :
+if ( ! function_exists( 'my_simone_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see simone_custom_header_setup().
+ * @see my_simone_custom_header_setup().
  */
-function simone_admin_header_style() {
+function my_simone_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,15 +103,15 @@ function simone_admin_header_style() {
 	</style>
 <?php
 }
-endif; // simone_admin_header_style
+endif; // my_simone_admin_header_style
 
-if ( ! function_exists( 'simone_admin_header_image' ) ) :
+if ( ! function_exists( 'my_simone_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see simone_custom_header_setup().
+ * @see my_simone_custom_header_setup().
  */
-function simone_admin_header_image() {
+function my_simone_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -123,4 +123,4 @@ function simone_admin_header_image() {
 	</div>
 <?php
 }
-endif; // simone_admin_header_image
+endif; // my_simone_admin_header_image

@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The Template for displaying all single posts.
  *
- * @package Simone
+ * @package my-simone
  */
 
 get_header(); ?>
@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php simone_post_nav(); ?>
+			<?php my_simone_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
+				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
 			?>

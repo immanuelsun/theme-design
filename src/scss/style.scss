@@ -119,4 +119,6 @@ Custom Theme Styles
 --------------------------------------------------------------*/
 /*  ! Layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@import "custom-theme/layout";
+@import "theme/layout";
+@import "theme/nav";
+@import "theme/typography";

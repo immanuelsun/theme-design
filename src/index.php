@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Simone
+ * @package my-simone
  */
 
 get_header(); ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php simone_paging_nav(); ?>
+			<?php my_simone_paging_nav(); ?>
 
 		<?php else : ?>
 
