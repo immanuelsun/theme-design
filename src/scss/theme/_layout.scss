@@ -1,17 +1,50 @@
+/*  ! Layout: Right Sidebar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 .content-area {
     float: left;
-    margin: 0 -25% 0 0;
-    width: 100%;
+    margin-left: -$size__sidebar-width;
+    padding-left: $size__sidebar-width;
+    width: $size__site-main;
 }
+
 .site-main {
-    margin: 0 25% 0 0;
+    @include bg;
 }
+
 .site-content .widget-area {
+    // float: right;
+    // overflow: hidden;
+    // width: $size__site-sidebar;
+    width: $size__sidebar-width;
     float: right;
-    overflow: hidden;
-    width: 25%;
+    padding: 4rem;
+    @include bg($color__bg-widget-main, $color__bg-widget-second);
 }
+
 .site-footer {
     clear: both;
-    width: 100%;
+    width: $size__site-main;
 }
+
+.entry-header,
+.entry-content,
+.entry-meta,
+.entry-footer,
+.tag-links,
+.post-navigation,
+.comments-area,
+.paging-navigation {
+    position: relative;
+    @include max-width;
+    max-width: 780px;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 1160px ) {}
+
+@media (max-width: 1023px) and (min-width: 768px) {}
+
+@media(max-width: 767px) {}
+

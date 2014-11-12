@@ -1,18 +1,35 @@
+// Background
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__bg-main: #b2b2b2;
+$color__bg-second: HSL(0, 0%, 70%);
+$color__bg-btn-main: #3c3c3c;
+$color__bg-btn-second: hsl(0, 0%, 24%);
+$color__bg-btn-hover-main: #000;
+$color__bg-btn-hover-second: hsl(0, 0%, 0%);
+$color__bg-widget-main: #fff;
+$color__bg-widget-second: hsl(0, 0%, 100%);
 
+// Link
+$color__link: #000;
+$color__link-visited: #333;
+$color__link-hover: midnightblue;
+
+// Text
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #BB9D1B;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
 
+$color__text-main: #383E33;
+$color__text-second: hsl(0, 0%, 25%);
+$color__heading-main: #000;
+$color__heading-second: hsl(38, 31%, 25%);
+
+// Border
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
