@@ -9,6 +9,19 @@
     @include bg($color__bg-header-main, $color__bg-header-second);
 }
 
+.header-background-image {
+    background: no-repeat center;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+
+.header-background-image .title-box {
+    background: #333;
+    background: HSLA(232, 37%, 28%, .7);
+}
+
+
 .site-title {
     font-weight: 700;
     font-size: 40px;
@@ -52,4 +65,11 @@
         padding: 4rem;
         border: none;
     }
+}
+
+/* Header image */
+.header-image img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
 }

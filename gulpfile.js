@@ -32,8 +32,7 @@ gulp.task('styles', function() {
   .pipe(gulp.dest(build))
   .pipe(plugins.rename({suffix: '.min'}))
   .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
-  .pipe(gulp.dest(build))
-  .pipe(plugins.notify('Styles are processed.'));
+  .pipe(gulp.dest(build));
 });
 
 
@@ -79,8 +78,7 @@ gulp.task('scripts-extras', function() {
 // Copy images; minification occurs during packaging
 gulp.task('images', function() {
   return gulp.src(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)')
-  .pipe(gulp.dest(build))
-  .pipe(plugins.notify('Images are processed.'));
+  .pipe(gulp.dest(build));
 });
 
 
