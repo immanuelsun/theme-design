@@ -1,0 +1,55 @@
+/* ==================================================
+   ! Basic styles for the theme
+================================================== */
+/*  ! Header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.site-branding {
+    padding: 6rem 0;
+    text-align: center;
+    @include bg($color__bg-header-main, $color__bg-header-second);
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 40px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+.site-description {
+    font-weight: 100;
+    @include font-size(2);
+}
+
+.title-box {
+    width: 600px;
+    max-width: 75%;
+    padding: 4rem;
+    margin: 0 auto;
+    border: solid 1px $color__border-main;
+    border: solid 1px $color__border-second;
+}
+
+.site-branding a {
+    text-decoration: none;
+}
+
+.site-title a,
+.site-description {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+}
+
+/* Header responsive */
+@media screen and (max-width: 600px) {
+    .site-branding { padding: 0; }
+
+    .title-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 4rem;
+        border: none;
+    }
+}

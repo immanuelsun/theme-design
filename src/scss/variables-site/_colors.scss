@@ -6,7 +6,9 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 $color__bg-main: #b2b2b2;
-$color__bg-second: HSL(0, 0%, 70%);
+$color__bg-second: hsl(0, 0%, 70%);
+$color__bg-header-main:#2c86ba;
+$color__bg-header-second: hsl(202, 62%, 45%);
 $color__bg-btn-main: #3c3c3c;
 $color__bg-btn-second: hsl(0, 0%, 24%);
 $color__bg-btn-hover-main: #000;
@@ -30,6 +32,8 @@ $color__heading-main: #000;
 $color__heading-second: hsl(38, 31%, 25%);
 
 // Border
+$color__border-main: #fff;
+$color__border-second: hsla(0, 0%, 100%, .3);
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;

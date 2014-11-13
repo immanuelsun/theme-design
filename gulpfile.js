@@ -32,9 +32,9 @@ gulp.task('styles', function() {
   .pipe(gulp.dest(build))
   .pipe(plugins.rename({suffix: '.min'}))
   .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
-  .pipe(gulp.dest(build));
+  .pipe(gulp.dest(build))
+  .pipe(plugins.notify('Styles are processed.'));
 });
-
 
 
 // ==== SCRIPTS ==== //
@@ -57,8 +57,7 @@ gulp.task('scripts-lint', function() {
 // These are the core custom scripts loaded on every page; pass an array to bundle several scripts in order
 gulp.task('scripts-core', function() {
   return gulp.src([
-    source+'js/core.js'
-    //, source+'js/navigation.js' // An example of how to add files to a bundle
+    source+'js/core/*.js' // An example of how to add files to a bundle
   ])
   .pipe(plugins.concat('core.js'))
   .pipe(gulp.dest(build+'js/'));
@@ -68,12 +67,11 @@ gulp.task('scripts-core', function() {
 gulp.task('scripts-extras', function() {
   return gulp.src([
     // You can also add dependencies from Bower components e.g.: bower+'dependency/dependency.js',
-    source+'js/extras.js'
+    source+'js/extras/*.js'
   ])
   .pipe(plugins.concat('extras.js'))
   .pipe(gulp.dest(build+'js/'));
 });
-
 
 
 // ==== IMAGES ==== //
@@ -81,7 +79,8 @@ gulp.task('scripts-extras', function() {
 // Copy images; minification occurs during packaging
 gulp.task('images', function() {
   return gulp.src(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)')
-  .pipe(gulp.dest(build));
+  .pipe(gulp.dest(build))
+  .pipe(plugins.notify('Images are processed.'));
 });
 
 
@@ -174,7 +173,7 @@ gulp.task('server', ['build'], function() {
 // Watch task: build stuff when files are modified, livereload when anything in the `build` or `dist` folders change
 gulp.task('watch', ['server'], function() {
   gulp.watch(source+'scss/**/*.scss', ['styles']);
-  gulp.watch([source+'js/**/*.js', bower+'**/*.js'], ['scripts']);
+  gulp.watch([source+'js/*.js', source+'js/**/*.js', bower+'**/*.js'], ['scripts']);
   gulp.watch(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)', ['images']);
   gulp.watch(source+'**/*.php', ['php']);
   gulp.watch([build+'**/*', dist+'**/*']).on('change', function(file) {
