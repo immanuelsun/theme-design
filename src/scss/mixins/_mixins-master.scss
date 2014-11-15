@@ -21,23 +21,18 @@
 	clear: both;
 }
 
-/* ==================================================
-   ! Custom Styles
-================================================== */
-// Color
-@mixin color($color-1: $color__text-main, $color-2: $color__text-second) {
-    color: $color-1;
-    color: $color-2;
+// Custom Mixins
+@mixin color($main: $color__text-main , $second: $color__text-second) {
+    color: $main;
+    color: $second;
 }
 
-// Background color
-@mixin bg($color-1: $color__bg-main, $color-2: $color__bg-second) {
-    background: $color-1;
-    background: $color-2;
+@mixin background($main: $color__bg-header-main, $second: $color__bg-header-second) {
+    background: $main;
+    background: $second;
 }
 
-// Width
-@mixin max-width($sizeValue: $size__content-width) {
-    max-width: $sizeValue + px;
+@mixin max-width($sizeValue) {
+    max-width: ($sizeValue * 10) + px;
     max-width: $sizeValue + rem;
 }

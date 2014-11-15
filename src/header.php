@@ -1,10 +1,10 @@
 <?php
 /**
- * The Header for our theme.
+ * The header for our theme.
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package my-simone
+ * @package Simone
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -20,21 +20,20 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'simone' ); ?></a>
 
-	<!-- ! Header
-	================================================== -->
 	<header id="masthead" class="site-header" role="banner">
-		<!-- header image -->
-		<?php if ( get_header_image() && ( 'blank' == get_header_textcolor() )) : ?>
+		<!-- Header Image -->
+		<?php if ( get_header_image() && ('blank' == get_header_textcolor()) ) : ?>
 			<div class="header-image">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+					<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 				</a>
 			</div>
 			<!-- /.header-image -->
 		<?php endif; // End header image check. ?>
 
-		<!-- branding -->
+		<!-- Branding -->
 		<?php
 		    if ( get_header_image() && !('blank' == get_header_textcolor()) ) {
 		        echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">';
@@ -42,23 +41,17 @@
 		        echo '<div class="site-branding">';
 		    }
 		?>
+				<div class="title-box">
+					 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</div>
+				<!-- /.title-box -->
+			</div><!-- .site-branding -->
 
-			<div class="title-box">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div>
-			<!-- /.title-box -->
-		</div>
-
-		<!-- navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'my-simone' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'my-simone' ); ?></a>
-
+			<button class="menu-toggle"><?php _e( 'Primary Menu', 'simone' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<!-- ! Content
-	================================================== -->
 	<div id="content" class="site-content">

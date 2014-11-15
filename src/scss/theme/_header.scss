@@ -1,26 +1,11 @@
-/* ==================================================
-   ! Basic styles for the theme
-================================================== */
-/*  ! Header
+/*  ! Theme: Header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Branding */
 .site-branding {
     padding: 6rem 0;
     text-align: center;
-    @include bg($color__bg-header-main, $color__bg-header-second);
+    @include background();
 }
-
-.header-background-image {
-    background: no-repeat center;
-    -webkit-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-}
-
-.header-background-image .title-box {
-    background: #333;
-    background: HSLA(232, 37%, 28%, .7);
-}
-
 
 .site-title {
     font-weight: 700;
@@ -41,8 +26,7 @@
     max-width: 75%;
     padding: 4rem;
     margin: 0 auto;
-    border: solid 1px $color__border-main;
-    border: solid 1px $color__border-second;
+    border: solid 1px #fff;
 }
 
 .site-branding a {
@@ -72,4 +56,16 @@
     display: block;
     width: 100%;
     margin: 0 auto;
+}
+
+.header-background-image {
+    background: no-repeat center;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+
+.header-background-image .title-box {
+    background: #333;
+    background: HSLA(232, 37%, 28%, .8);
 }

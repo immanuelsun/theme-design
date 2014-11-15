@@ -56,7 +56,9 @@ gulp.task('scripts-lint', function() {
 // These are the core custom scripts loaded on every page; pass an array to bundle several scripts in order
 gulp.task('scripts-core', function() {
   return gulp.src([
-    source+'js/core/*.js' // An example of how to add files to a bundle
+    source+'js/core/customizer.js',
+    source+'js/core/navigation.js',
+    source+'js/core/skip-link-focus-fix.js'
   ])
   .pipe(plugins.concat('core.js'))
   .pipe(gulp.dest(build+'js/'));
@@ -66,7 +68,8 @@ gulp.task('scripts-core', function() {
 gulp.task('scripts-extras', function() {
   return gulp.src([
     // You can also add dependencies from Bower components e.g.: bower+'dependency/dependency.js',
-    source+'js/extras/*.js'
+    source+'js/extras/superfish.min.js',
+    source+'js/extras/superfish-settings.js'
   ])
   .pipe(plugins.concat('extras.js'))
   .pipe(gulp.dest(build+'js/'));

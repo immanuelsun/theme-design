@@ -2,23 +2,26 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package my-simone
+ * @package Simone
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'my-simone' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'simone' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'my-simone' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+
+	<footer class="entry-footer">
+		<?php edit_post_link( __( 'Edit', 'simone' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

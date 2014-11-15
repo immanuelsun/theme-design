@@ -1,8 +1,8 @@
 <?php
 /**
- * my-simone Theme Customizer
+ * Simone Theme Customizer
  *
- * @package my-simone
+ * @package Simone
  */
 
 /**
@@ -10,17 +10,21 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function my_simone_customize_register( $wp_customize ) {
+function simone_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
-add_action( 'customize_register', 'my_simone_customize_register' );
+add_action( 'customize_register', 'simone_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function my_simone_customize_preview_js() {
-	wp_enqueue_script( 'my_simone_customizer', get_template_directory_uri() . '/js/core.js', array( 'customize-preview' ), '20130508', true );
+function simone_customize_preview_js() {
+    if  (file_exists(get_template_directory_uri() . '/js/core/customizer.js')) {
+        wp_enqueue_script( 'simone_customizer', get_template_directory_uri() . '/js/core/customizer.js', array( 'customize-preview' ), '20130508', true );
+    } else {
+        wp_enqueue_script( 'simone_customizer', get_template_directory_uri() . '/js/core.min.js', array('customize-preview' ), '20130508', true );
+    }
 }
-add_action( 'customize_preview_init', 'my_simone_customize_preview_js' );
+add_action( 'customize_preview_init', 'simone_customize_preview_js' );

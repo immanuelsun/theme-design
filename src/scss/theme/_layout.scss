@@ -1,7 +1,11 @@
-/*  ! Layout: Right Sidebar
+/* ==================================================
+   ! Theme Styles
+================================================== */
+
+/*  ! Theme: Layout - Right Sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .site-main {
-    @include bg;
+    background: #B2B2B2;
 }
 
 .site-content .widget-area {
@@ -11,7 +15,7 @@
     width: $size__sidebar-width;
     float: right;
     padding: 4rem;
-    @include bg($color__bg-widget-main, $color__bg-widget-second);
+    background: #fff;
 }
 
 .entry-header,
@@ -23,7 +27,7 @@
 .comments-area,
 .paging-navigation {
     position: relative;
-    @include max-width;
+    @include max-width($size__content-width);
     padding: 0 4rem;
     margin: 0 auto;
 }
@@ -33,12 +37,20 @@
     width: $size__site-main;
 }
 
-@media only screen and (min-width: 1160px ) {
+@media screen and (min-width: 1540px ) {
     .content-area {
+        float: left;
+        width: $size__site-main;
+        margin-right: -$size__sidebar-width;
+    }
+}
+
+@media screen and (min-width: 1160px) and (max-width: 1539px) {
+    .content-area {
+        width: $size__site-main;
         float: left;
         margin-left: -$size__sidebar-width;
         padding-left: $size__sidebar-width;
-        width: $size__site-main;
     }
 
     .entry-header,
@@ -51,20 +63,14 @@
     .paging-navigation {
         margin-right: 0;
     }
+
 }
 
-@media (max-width: 1159px) {
+@media screen and (max-width: 1159px) {
     .site-content .widget-area {
-        // float: right;
-        // overflow: hidden;
-        // width: $size__site-sidebar;
         width: auto;
-        max-width: 780px;
+        @include max-width($size__content-width);
         float: none;
         margin: 1em auto 0;
     }
 }
-
-@media (max-width: 1159px) and (min-width: 768px) {}
-
-@media(max-width: 767px) {}
