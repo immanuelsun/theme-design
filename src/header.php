@@ -51,8 +51,22 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Menu', 'simone' ); ?></button>
 			<?php wp_nav_menu( array ( 'theme_location' => 'primary' ) ); ?>
+			<div class="search-toggle">
+			    <i class="fa fa-search"></i>
+			    <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'my-simone' ); ?></a>
+			</div>
+
 			<?php simone_social_menu(); ?>
 		</nav><!-- #site-navigation -->
+
+		<!-- Search Form -->
+		<div id="search-container" class="search-box-wrapper clear">
+			<div class="search-box clear">
+				<?php get_search_form(); ?>
+			</div>
+			<!-- /.search-box clear -->
+		</div>
+		<!-- /#search-container.search-box-wrapper clear -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

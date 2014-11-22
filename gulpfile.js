@@ -69,7 +69,8 @@ gulp.task('scripts-extras', function() {
   return gulp.src([
     // You can also add dependencies from Bower components e.g.: bower+'dependency/dependency.js',
     source+'js/extras/superfish.min.js',
-    source+'js/extras/superfish-settings.js'
+    source+'js/extras/superfish-settings.js',
+    source+'js/extras/hide-search.js'
   ])
   .pipe(plugins.concat('extras.js'))
   .pipe(gulp.dest(build+'js/'));
