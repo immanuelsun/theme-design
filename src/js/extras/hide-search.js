@@ -1,0 +1,11 @@
+/**
+ * Toggle header search on and off
+ */
+
+jQuery(document).ready(function($) {
+    $(".search-toggle").click(function(){
+        $("#search-container").slideToggle('slow', function(){
+            $(".search-toggle").addClass('active');
+        });
+    });
+});
