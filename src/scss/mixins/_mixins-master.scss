@@ -36,3 +36,18 @@
     max-width: ($sizeValue * 10) + px;
     max-width: $sizeValue + rem;
 }
+
+@mixin add-icon($margin-left: 2.5em, $font-size:14px, $fa:"\f036") {
+    margin: 0 0 0 $margin-left;
+
+    &:before {
+        display: block;
+        float: left;
+        padding-top: 2px;
+        margin-left: -$margin-left;
+        font-family: 'fontawesome';
+        font-size: $font-size;
+
+        content: $fa;
+    }
+}
