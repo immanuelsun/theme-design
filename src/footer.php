@@ -11,11 +11,6 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-
-        <!-- Footer Widgets -->
-        <?php get_sidebar('footer'); ?>
-
-        <!-- Site info -->
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simone' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'simone' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

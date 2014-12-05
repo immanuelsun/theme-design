@@ -90,16 +90,6 @@ function simone_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Widgets', 'simone' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Footer widgets appear at the footer of the site.', 'simone' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
 }
 add_action( 'widgets_init', 'simone_widgets_init' );
 
@@ -117,7 +107,6 @@ function my_simone_scripts() {
 		wp_enqueue_script( 'my-simone-skip-link-focus-fix', get_template_directory_uri() . '/js/core/skip-link-focus-fix.js', array(), '20120206', true );
 		wp_enqueue_script( 'my-simone-superfish', get_template_directory_uri() . '/js/extras/superfish.min.js', array('jquery'), '20141014', true );
 		wp_enqueue_script( 'my-simone-superfish-settings', get_template_directory_uri() . '/js/extras/superfish-settings.js', array('jquery'), '20141014', true );
-		wp_enqueue_script( 'my-simone-hide-search', get_template_directory_uri() . '/js/extras/hide-search.js', array('jquery'), '20141014', true );
 	} else {
 		wp_enqueue_script( 'my-simone-core', get_template_directory_uri() . '/js/core.min.js', array('jquery', 'customize-preview'), '20120206', true );
 		wp_enqueue_script( 'my-simone-extras', get_template_directory_uri() . '/js/extras.min.js', array('jquery'), '20120206', true );
