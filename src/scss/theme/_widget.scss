@@ -1,0 +1,98 @@
+
+/*  ! Theme: Widgets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* General */
+.widget {
+    margin: 0 0 4em;
+    font-family: $font__heading;
+    @include font-size(1.6);
+    font-weight: normal;
+
+    a {
+        font-weight: 700;
+        @include color($color__widget-main, $color__widget-second)
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: -1em 0 0;
+        list-style-type: none;
+
+        li {
+            padding: 1em 0 0;
+
+            ul, ol {
+                margin-top: 0;
+
+                li {
+                    margin-left: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+.widget-title {
+    margin-bottom: 1em;
+    @include font-size(2.4);
+    border-bottom: 2px solid #000;
+}
+
+
+/* Make sure select elements fit in widgets */
+.widget select {
+    max-width: 100%;
+}
+
+/* Hide Search widget */
+.widget_search .search-submit {
+    display: none;
+}
+
+/* Footer Widgets */
+.footer-widgets { margin: 0 auto; }
+
+.footer-widgets .widget a {
+    color: #FFF;
+}
+
+.footer-widgets .widget-title,
+.footer-widgets .widget a:hover {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    border-color: #fff;
+    border-color: hsl(0, 0%, 100%);
+}
+
+.footer-widgets .widget {
+    float: left;
+    width: 320px;
+    margin: 0 4rem 8rem 4rem;
+}
+
+/* Individual Widgets */
+
+/* Recent Posts */
+.widget_recent_entries li {
+    @include add-icon(2.5em, 14px, "\f036");
+    margin-top: .5em;
+}
+
+/* Recent Comments */
+.widget_recent_comments li {
+    @include add-icon(2.5em, 14px, "\f075");
+}
+
+/* Archives */
+.widget_archive li {
+    @include add-icon(2.5em, 14px, "\f187");
+}
+
+/* Custom Menu */
+.widget_nav_menu a,
+.widget-pages a {
+    display: block;
+    padding: .2em 0;
+    border-bottom:  1px solid hsl(0, 0%, 90%);
+}
+

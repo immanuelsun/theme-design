@@ -1,0 +1,19 @@
+
+/*  ! Theme: Footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.site-footer {
+    padding: 2em;
+    font-family: $font__heading;
+    @include font-size(1.6);
+    @include color($color__footer-main, $color__footer-second);
+    @include background($color__bg-footer-main, $color__bg-footer-second);
+
+    a {
+        color: #FFF;
+    }
+}
+
+.site-info {
+    text-align: center;
+}
+
