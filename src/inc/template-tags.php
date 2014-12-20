@@ -49,13 +49,15 @@ function simone_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'simone' ); ?></h1>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'simone' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'simone' ) );
-			?>
-		</div><!-- .nav-links -->
+	    <div class="post-nav-box clear">
+	        <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'my-simone' ); ?></h1>
+	        <div class="nav-links">
+	            <?php
+	            previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+	            next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+	            ?>
+	        </div><!-- .nav-links -->
+	    </div><!-- .post-nav-box -->
 	</nav><!-- .navigation -->
 	<?php
 }
@@ -84,11 +86,11 @@ function simone_posted_on() {
 	);
 
 	$byline = sprintf(
-		_x( 'Written by %s', 'post author', 'simone' ),
+		_x( '<span class="byline"> Written by </span> %s', 'post author', 'simone' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>';
+	echo $byline . '<span class="posted-on">' . $posted_on . '</span>';
 
 }
 endif;

@@ -6,15 +6,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( __( ', ', 'simone' ) );
 			if ( $categories_list && simone_categorized_blog() ) {
-				printf( '<span class="cat-links">' . __( 'Categories: %1$s', 'simone' ) . '</span>', $categories_list );
+				printf( '<span class="cat-links">' . __( '%1$s', 'simone' ) . '</span>', $categories_list );
 			}
 
 		?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 		<div class="entry-meta">
 			<?php simone_posted_on(); ?>
 

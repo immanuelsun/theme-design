@@ -8,9 +8,11 @@ $color__text-second: HSLA(180, 1%, 23%, 1);
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
+$color__text-header-main: #000;
+$color__text-header-second: HSLA(0, 0%, 0%, 1);
 
 /* Main Links */
-$color__link: #8E9333;
+$color__link: HSLA(185, 100%, 30%, 1);
 $color__link-visited: #53452C;
 $color__link-hover: #B12618;
 
@@ -40,3 +42,9 @@ $color__bg-footer-second: HSLA(0, 0%, 19%, 1);
 /* Widget */
 $color__widget-main: #000;
 $color__widget-second: HSLA(60, 100%, 1%, 1);
+
+/* Image Caption */
+$color__caption-bg: $color__link;
+$color__caption-text: HSLA(0, 0%, 92%, 1);
+$color__caption-link: HSLA(5, 76%, 50%, 1);
+$color__caption-link-hover: $color__caption-text;

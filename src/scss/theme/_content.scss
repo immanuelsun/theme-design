@@ -1,0 +1,475 @@
+
+/*  ! Theme: Content - Posts and Pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.entry-title {
+    margin: 2rem 0;
+    font-weight: 900;
+    line-height: 1.3em;
+
+    @include font-size(4);
+    @include color($color__text-header-main, $color__text-header-second);
+}
+
+/* Typography */
+.entry-content {
+
+    a {
+        text-decoration: underline;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0.4em;
+    }
+
+    h1 {
+        @include font-size(3.2);
+    }
+
+    h2 {
+        @include font-size(3);
+    }
+
+    h3 {
+        @include font-size(2.8);
+    }
+
+    h4 {
+        @include font-size(2.6);
+    }
+
+    h5 {
+        @include font-size(2.4);
+    }
+
+    h6 {
+        @include font-size(2.2);
+    }
+
+    p,
+    ul,
+    ol {
+        @include font-size(2);
+        line-height: 1.6em;
+    }
+
+    blockquote p {
+        @include font-size(2.8);
+        line-height: 1.5em;
+    }
+}
+
+/* Blockquotes */
+blockquote {
+    padding: 1.5em;
+    margin-bottom: 1em;
+    font-style: italic;
+    border-top: solid 1px hsl(0, 0%, 80%);
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+    background: transparent url('images/blockquote_bg.png') repeat;
+
+    em {
+        font-style: normal;
+    }
+
+    cite {
+        display: block;
+        margin-top: 1em;
+        margin-left: 40%;
+        @include font-size(1.8);
+        font-family: $font__heading;
+        text-align: right;
+        line-height: 1.5em;
+    }
+}
+blockquote.alignleft {
+    width: 60%;
+    float: left;
+    margin-right: 2em;
+}
+
+blockquote.alignright {
+    width: 60%;
+    float: right;
+    margin-left: 2em;
+}
+
+/* smaller fonts for smaller screens */
+@media screen and (max-width: 680px) {
+    .entry-title {
+        @include font-size(3.2);
+        line-height: 1.3em;
+    }
+
+    .entry-content {
+        h1 { @include font-size(2.8); line-height: 1.3em;}
+        h2 { @include font-size(2.6);}
+        h3 { @include font-size(2.4);}
+        h4 { @include font-size(2.2);}
+        h5 { @include font-size(2);}
+        h6 { @include font-size(1.8);}
+        p,
+        ul,
+        ol {
+            @include font-size(1.8);
+        }
+
+        blockquote p {
+            @include font-size(2.2);
+            line-height: 1.5em;
+        }
+    }
+}
+
+/* change single post background color */
+.site-content {
+    padding-bottom: 4em;
+    background: #b2b2b2;
+}
+.single .site-content,
+.page .site-content {
+    background: #fff !important;
+    background: hsl(0, 0%, 100%);
+}
+
+/* Meta */
+.cat-links {
+    margin: 1.3em 0 1em;
+    font-family: $font__heading;
+    @include font-size(1.6);
+
+    a {
+        color: $color__link;
+
+        &:hover {
+            color: $color__link-hover;
+        }
+    }
+}
+
+.entry-header {
+    margin-top: 1rem;
+}
+
+.entry-meta {
+    @extend .cat-links;
+    @include font-size(1.2);
+
+    a {
+        font-weight: 600;
+    }
+}
+
+.entry-footer {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    font-family: $font__heading;
+    @include font-size(1.6);
+    line-height: 2em;
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin-right: 4rem;
+
+        .fa-tag {
+            @include font-size(1.4);
+            color: $color__link-hover;
+        }
+
+        a {
+            padding-left: .3em;
+        }
+    }
+}
+
+@media screen and (min-width: 1320px){
+    .single .entry-meta {
+        width: 220px;
+        margin-left: -220px;
+        float: left;
+        text-align: right;
+        margin-top: 2px;
+    }
+
+    .single .byline {
+        display: block;
+        @include font-size(1.4);
+        color: $color__link-hover;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .single .author,
+    .single .posted-on,
+    .single .comments-link {
+        display: block;
+        font-style: italic;
+        line-height: 2.2em;
+        @include font-size(1.2);
+
+        a {
+            font-weight: normal;
+        }
+    }
+
+    .single .author {
+    }
+
+    .single .posted-on {
+    }
+
+    .single .comments-link a {
+        font-weight: bold;
+        @include font-size(1.4);
+    }
+}
+
+@media screen and (max-width: 1319px){
+    .entry-meta {
+        padding: 0;
+    }
+
+    .posted-on:before {
+        content: ' on ';
+    }
+    .posted-on:after {
+        content: '.';
+    }
+}
+
+/* Alignment responsive */
+@media screen and (min-width: 1320px) {
+    .alignleft {
+        margin-left: -160px;
+    }
+}
+
+@media screen and (min-width: 1820px) {
+    .alignright {
+        margin-right: -160px;
+    }
+}
+
+/* Image captions - Modified the styles set by _S */
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+}
+
+.wp-caption-text {
+    text-align: center;
+    margin-top: 0;
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+    margin-top: 0;
+    padding: 0.8075em 1em;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: 'Lato', sans-serif;
+    background: $color__caption-bg;
+    color: $color__caption-text;
+
+    a {
+        color: $color__caption-link;
+
+        &:hover {
+            color: $color__caption-link-hover;
+        }
+    }
+}
+
+.site-main .gallery {
+    margin-bottom: 1.5em;
+}
+
+.site-main .gallery-item {
+    position: relative;
+    width: 150px;
+    float: left;
+    margin-right: 3.333333333%;
+    margin-bottom: 3rem;
+    background: #333;
+    overflow: hidden;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: 100%;
+    width: 100%;
+    padding: 1em;
+    margin: 0;
+    @include font-size(1);
+    line-height: 1.5;
+    text-align: left;
+    background-color: $color__caption-bg;
+    opacity: 0;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    height: 50%;
+
+    -webkit-transition: all;
+       -moz-transition: all;
+        -ms-transition: all;
+         -o-transition: all;
+            transition: all;
+}
+
+.site-main .gallery a img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+cap
+
+/* Post/Page/Comments Navigation */
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+        font-size: 18px;
+        font-size: 1.8rem;
+        font-family: 'Lato', sans-serif;
+        color: #000;
+        color: hsl(0, 0%, 0%);
+}
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+    width: 50%;
+        float: left;
+        padding-right: 15%;
+}
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+        width: 50%;
+        float: right;
+        padding-left: 15%;
+    text-align: right;
+}
+
+.nav-indicator {
+    margin-bottom: 1em;
+}
+
+.nav-previous h1,
+.nav-next h1 {
+    font-weight: 900;
+}
+
+.post-nav-box {
+    padding: 2em 0;
+    margin-bottom: 4em;
+    border-top: hsl(0, 0%, 80%) solid 1px;
+    border-bottom: hsl(0, 0%, 80%) solid 1px;
+}
+
+
+/* Comments */
+.comment-navigation {
+    padding: 1em 0;
+    margin: 3em 0;
+    border-top: hsl(0, 0%, 80%) solid 1px;
+    border-bottom: hsl(0, 0%, 80%) solid 1px;
+
+    i {
+        margin: 0 1em;
+    }
+}
+
+.comment-body {
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: solid hsl(0, 0%, 80%) 1px;
+}
+
+.comment-title {
+    font-weight: 900;
+    @include font-size(3.6);
+}
+
+.comments-area > ol {
+    padding: 0;
+    margin: 2em 0;
+    list-style-type: none;
+}
+
+ol.children { list-style-type: none;}
+
+.comment-list ol { margin-left: 50px;}
+
+.comment-meta {
+    margin-bottom: 1em;
+}
+
+.comment-author {
+    .avatar {
+        width: 50px;
+        display: inline-block;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .fn {
+        font-weight: 900;
+        font-family: $font__heading;
+        @include font-size(2);
+    }
+}
+
+.comment-metadata {
+    @include font-size(1.2);
+}
+
+.comment-content,
+.comment-reply {
+    margin-left: 70px;
+}
+
+.comment-content {
+    font-size: 90%;
+
+    a {
+        -ms-word-wrap: break-word;
+            word-wrap: break-word;
+    }
+
+    ol {
+        margin-left: 1.5em;
+    }
+}
+
+.reply {
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+/* Comments responsive */
+@media screen and (max-width:600px) {
+    .comment-list ol { margin-left: 0; }
+
+    .comment-content ol { margin-left: 1.5em; }
+
+    .comment-content,
+    .reply { margin-left: 0; }
+}
