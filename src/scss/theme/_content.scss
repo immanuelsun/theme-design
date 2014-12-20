@@ -1,5 +1,5 @@
 
-/*  ! Theme: Content - Posts and Pages
+/*  ! Theme: Content - Typography
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .entry-title {
     margin: 2rem 0;
@@ -125,7 +125,9 @@ blockquote.alignright {
     }
 }
 
-/* change single post background color */
+
+/*  ! Theme: Content - Single Post
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .site-content {
     padding-bottom: 4em;
     background: #b2b2b2;
@@ -243,7 +245,9 @@ blockquote.alignright {
     }
 }
 
-/* Alignment responsive */
+
+/*  ! Theme: Content - Alignment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media screen and (min-width: 1320px) {
     .alignleft {
         margin-left: -160px;
@@ -256,7 +260,9 @@ blockquote.alignright {
     }
 }
 
-/* Image captions - Modified the styles set by _S */
+
+/*  ! Theme: Content - Image Captions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .wp-caption {
     margin-bottom: 1.5em;
     max-width: 100%;
@@ -290,6 +296,10 @@ blockquote.alignright {
         }
     }
 }
+
+
+/*  ! Theme: Content - Post Type: Gallery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .site-main .gallery {
     margin-bottom: 1.5em;
@@ -340,7 +350,9 @@ blockquote.alignright {
 }
 cap
 
-/* Post/Page/Comments Navigation */
+
+/*  ! Theme: Content - Navigation for Pages | Posts | Comments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -383,7 +395,9 @@ cap
 }
 
 
-/* Comments */
+
+/*  ! Theme: Content - Comments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .comment-navigation {
     padding: 1em 0;
     margin: 3em 0;
@@ -473,3 +487,89 @@ ol.children { list-style-type: none;}
     .comment-content,
     .reply { margin-left: 0; }
 }
+
+/* Author comments */
+.bypostauthor > .comment-body {
+    position: relative;
+    background: HSLA(185, 100%, 30%, .3) url('images/blockquote_bg.png') repeat;
+    border: solid 2px HSLA(185, 100%, 30%, .3);
+
+    -webkit-border-radius: 50px 20px 30px 20px;
+            border-radius: 50px 20px 30px 20px;
+
+    padding: 1em 2em;
+    margin-bottom: 2em;
+}
+
+/* Comment form */
+.comment-reply-title {
+    font-weight: 900;
+    @include font-size(3);
+    margin-bottom: .5em;
+}
+
+.comment-form {
+    padding-bottom: 2rem;
+    font-family: $font__heading;
+    @include font-size(1.6);
+
+    text-area {
+        font-family: $font__main;
+        @include font-size(1.8);
+    }
+
+    label {
+        display: block;
+    }
+
+    .required {
+        color: red;
+    }
+}
+
+.comment-awaiting-moderation { /* Green background color to make moderation seem less aggressive */
+    padding: .5rem 1rem;
+    margin: 1rem 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #84bd68;
+    background: hsl(100, 39%, 57%);
+}
+
+
+/*  ! Theme: Content - Media
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Featured Image */
+.single-post-thumbnail {
+    background:      url(images/pattern.svg) repeat;
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1820px) {
+    .image-shifter {
+        width: 1060px;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1540px) and (max-width: 1820px) {
+    .image-shifter { margin-right: 380px;}
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1819px) {
+    .image-shifter {
+        width: 1060px;
+        float: right;
+    }
+}
+
+
