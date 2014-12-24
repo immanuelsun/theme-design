@@ -6,6 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<!-- Featured Image -->
 	<?php
 	if (has_post_thumbnail()) {
 	    echo '<div class="single-post-thumbnail clear">';
@@ -18,28 +19,30 @@
 
 
 	<header class="entry-header">
+
 		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ', 'simone' ) );
-			if ( $categories_list && simone_categorized_blog() ) {
-				printf( '<span class="cat-links">' . __( '%1$s', 'simone' ) . '</span>', $categories_list );
-			}
+				/* translators: used between list items, there is a space after the comma */
+				$categories_list = get_the_category_list( __( ', ', 'simone' ) );
+				if ( $categories_list && simone_categorized_blog() ) {
+					printf( '<span class="cat-links">' . __( '%1$s', 'simone' ) . '</span>', $categories_list );
+				}
 
-		?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php simone_posted_on(); ?>
-
-			<!-- Comments -->
-			<?php
-			    if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
-	 		        echo '<span class="comments-link">';
-			        comments_popup_link( __( 'Leave a comment', 'simone' ), __( '1 Comment', 'simone' ), __( '% Comments', 'simone' ) );
-			        echo '</span>';
-			    }
 			?>
-		</div><!-- .entry-meta -->
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+			<div class="entry-meta">
+				<?php simone_posted_on(); ?>
+
+				<!-- Comments -->
+				<?php
+				    if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
+				 		        echo '<span class="comments-link">';
+				        comments_popup_link( __( 'Leave a comment', 'simone' ), __( '1 Comment', 'simone' ), __( '% Comments', 'simone' ) );
+				        echo '</span>';
+				    }
+				?>
+			</div><!-- .entry-meta -->
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

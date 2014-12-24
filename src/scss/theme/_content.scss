@@ -128,10 +128,6 @@ blockquote.alignright {
 
 /*  ! Theme: Content - Single Post
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.site-content {
-    padding-bottom: 4em;
-    background: #b2b2b2;
-}
 .single .site-content,
 .page .site-content {
     background: #fff !important;
@@ -139,7 +135,7 @@ blockquote.alignright {
 }
 
 /* Meta */
-.cat-links {
+.single .cat-links {
     margin: 1.3em 0 1em;
     font-family: $font__heading;
     @include font-size(1.6);
@@ -153,7 +149,7 @@ blockquote.alignright {
     }
 }
 
-.entry-header {
+.single .entry-header {
     margin-top: 1rem;
 }
 
@@ -166,7 +162,15 @@ blockquote.alignright {
     }
 }
 
-.entry-footer {
+.single .entry-meta,
+.single .entry-footer {
+    position: relative;
+    @include max-width($size__content-width);
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+
+.single .entry-footer {
     margin-top: 3rem;
     margin-bottom: 5rem;
     font-family: $font__heading;
@@ -224,6 +228,10 @@ blockquote.alignright {
     }
 
     .single .posted-on {
+        &:before,
+        &:after {
+            content: '';
+        }
     }
 
     .single .comments-link a {
@@ -232,25 +240,21 @@ blockquote.alignright {
     }
 }
 
-@media screen and (max-width: 1319px){
-    .entry-meta {
-        padding: 0;
-    }
-
-    .posted-on:before {
+.single .posted-on:before {
         content: ' on ';
     }
-    .posted-on:after {
-        content: '.';
-    }
+
+.single .posted-on:after {
+    content: '.';
 }
+
 
 
 /*  ! Theme: Content - Alignment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media screen and (min-width: 1320px) {
     .alignleft {
-        margin-left: -160px;
+        margin-left: -220px;
     }
 }
 
@@ -365,7 +369,7 @@ cap
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
-    width: 50%;
+        width: 50%;
         float: left;
         padding-right: 15%;
 }
@@ -375,7 +379,7 @@ cap
         width: 50%;
         float: right;
         padding-left: 15%;
-    text-align: right;
+        text-align: right;
 }
 
 .nav-indicator {
