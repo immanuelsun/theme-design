@@ -157,17 +157,17 @@ blockquote.alignright {
     @extend .cat-links;
     @include font-size(1.2);
 
+    margin: 1em 0;
+
     a {
         font-weight: 600;
     }
 }
 
-.single .entry-meta,
-.single .entry-footer {
+
+.single .entry-meta {
     position: relative;
     @include max-width($size__content-width);
-    padding: 0 4rem;
-    margin: 0 auto;
 }
 
 .single .entry-footer {
@@ -193,6 +193,16 @@ blockquote.alignright {
     }
 }
 
+.posted-on {
+    &:before {
+        content: ' on ';
+    }
+
+    &:after {
+        content: ' | ';
+    }
+}
+
 @media screen and (min-width: 1320px){
     .single .entry-meta {
         width: 220px;
@@ -200,6 +210,7 @@ blockquote.alignright {
         float: left;
         text-align: right;
         margin-top: 2px;
+        padding: 0 4rem;
     }
 
     .single .byline {
@@ -228,9 +239,13 @@ blockquote.alignright {
     }
 
     .single .posted-on {
-        &:before,
+
+        &:before {
+            content: none;
+        }
+
         &:after {
-            content: '';
+            content: none;
         }
     }
 
@@ -561,12 +576,14 @@ ol.children { list-style-type: none;}
     .image-shifter {
         width: 1060px;
         float: none;
-        margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 1540px) and (max-width: 1820px) {
-    .image-shifter { margin-right: 380px;}
+    .image-shifter {
+        margin-right: $size__sidebar-width;
+        float: right;
+    }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1819px) {
@@ -577,3 +594,104 @@ ol.children { list-style-type: none;}
 }
 
 
+/*  ! Theme - Index and Archive Pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Read More Link */
+.continue-reading {
+    font-weight: 900;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.continue-reading i { margin-left: .5em; }
+
+/* Featured Image */
+.small-index-thumbnail {
+    margin-top: -1em;
+    margin-bottom: 1em;
+    text-align: center;
+
+    a img {
+        width: 100%;
+    }
+}
+
+/* paging navigation */
+.paging-navigation {
+     ul {
+        margin: 0;
+
+        li {
+            display: inline;
+
+            a.page-numbers,
+            span.page-numbers {
+                padding: .3em .7em;
+                color: 333;
+                color: hsl(0, 0%, 20%);
+            }
+
+            a:hover.page-numbers {
+                color: #000;
+                color: hsl(0, 0%, 0%);
+            }
+
+            .current {
+                font-weight: bold;
+                color: #000;
+                color: hsl(0, 0%, 0%);
+            }
+        }
+    }
+}
+
+.sticky-post {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    color: $color__link-hover;
+}
+
+
+/* First Post */
+.front-index-thumbnail {
+    margin-bottom: -3.2em;
+}
+
+/* Archive Page Header Section */
+.taxonomy-description {
+    padding-top: 2em;
+    margin: 2rem 0;
+    font-family: $font__heading;
+    font-style: italic;
+    border-top: 1px solid hsl(0, 0%, 75%);
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+}
+
+.page-title span.cat {
+    font-style: italic;
+    color: $color__link-hover;
+}
+
+/*  ! Theme : Post Format - Aside
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.format-aside .entry-content {
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 779px){
+    .format-aside .entry-content {
+        margin-top: 0;
+    }
+}
+
+.single-post-thumbnail img,
+.front-index-thumbnail img {
+    display: block;
+    margin: 0 auto;
+}
+
+.index-box.has-thumbnail {
+    position: relative;
+    margin-top: -4em;
+}
