@@ -95,35 +95,3 @@ add_action( 'wp', 'simone_setup_author' );
  * This is where we will put customized functions.
  */
 
-/**
- * Add Social Menu
- * Source: http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
- */
-function simone_social_menu() {
-	if ( has_nav_menu( 'social' ) ) {
-		   /**
-			* Displays a navigation menu
-			* @param array $args Arguments
-			*/
-			$args = array(
-				'theme_location' => 'social',
-				'menu' => '',
-				'container' => 'div',
-				'container_class' => 'menu-social',
-				'container_id' => 'menu-social',
-				'menu_class' => 'menu-items',
-				'menu_id' => 'menu-social-items',
-				'echo' => true,
-				'fallback_cb' => 'wp_page_menu',
-				'before' => '',
-				'after' => '',
-				'link_before' => '<span class="screen-reader-text">',
-				'link_after' => '</span>',
-				'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-				'depth' => 1,
-				'walker' => ''
-			);
-
-			wp_nav_menu( $args );
-	}
-}
