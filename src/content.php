@@ -89,6 +89,4 @@
 			</footer><!-- /.entry-footer -->
 		<?php } ?>
 
-	</div>	<!-- /.index-box -->
-
 </article><!-- #post-## -->

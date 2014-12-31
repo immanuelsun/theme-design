@@ -7,7 +7,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<!-- Featured Image -->
+	<div class="index-box">
+		<!-- Featured Image -->
 	<?php
 	if (has_post_thumbnail()) {
 	    echo '<div class="single-post-thumbnail clear">';
@@ -35,4 +36,5 @@
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'simone' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
+	</div><!-- /.index-box -->
 </article><!-- #post-## -->

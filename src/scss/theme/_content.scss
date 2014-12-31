@@ -574,25 +574,19 @@ ol.children { list-style-type: none;}
 
 @media screen and (min-width: 1820px) {
     .image-shifter {
-        width: 1060px;
-        float: none;
+        width: 100%;
+        float: right;
     }
 }
 
-@media screen and (min-width: 1540px) and (max-width: 1820px) {
+@media screen and (min-width: 1440px) and (max-width: 1820px) {
     .image-shifter {
         margin-right: $size__sidebar-width;
         float: right;
-    }
-}
-
-@media screen and (min-width: 1440px) and (max-width: 1819px) {
-    .image-shifter {
-        width: 1060px;
+        width: 100%;
         float: right;
     }
 }
-
 
 /*  ! Theme - Index and Archive Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

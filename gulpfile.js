@@ -35,7 +35,6 @@ gulp.task('styles', function() {
   .pipe(gulp.dest(build));
 });
 
-
 // ==== SCRIPTS ==== //
 
 // Scripts; broken out into different tasks to create specific bundles which are then compressed in place
@@ -87,7 +86,6 @@ gulp.task('images', function() {
 });
 
 
-
 // ==== LANGUAGES ==== //
 
 // Copy everything under `src/languages` indiscriminately
@@ -95,7 +93,6 @@ gulp.task('languages', function() {
   return gulp.src(source+lang+'**/*')
   .pipe(gulp.dest(build+lang));
 });
-
 
 
 // ==== PHP ==== //
@@ -106,14 +103,14 @@ gulp.task('php', function() {
   .pipe(gulp.dest(build));
 });
 
-
-// ==== Extra CSS ==== //
+// ==== CSS ==== //
 
 // Copy CSS source files to the build directory
 gulp.task('css', function() {
   return gulp.src(source+'**/*.css')
   .pipe(gulp.dest(build));
 });
+
 
 
 // ==== DISTRIBUTION ==== //
@@ -183,8 +180,8 @@ gulp.task('server', ['build'], function() {
 
 // Watch task: build stuff when files are modified, livereload when anything in the `build` or `dist` folders change
 gulp.task('watch', ['server'], function() {
+  gulp.watch(source+'layouts/**/*.scss', ['css']);
   gulp.watch(source+'scss/**/*.scss', ['styles']);
-  gulp.watch(source+'**/*.css', ['css']);
   gulp.watch([source+'js/*.js', source+'js/**/*.js', bower+'**/*.js'], ['scripts']);
   gulp.watch(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)', ['images']);
   gulp.watch(source+'**/*.php', ['php']);
@@ -198,7 +195,7 @@ gulp.task('watch', ['server'], function() {
 // ==== TASKS ==== //
 
 // Build styles and scripts; copy PHP files
-gulp.task('build', ['styles', 'scripts', 'images', 'languages', 'php', 'css']);
+gulp.task('build', ['images', 'languages', 'php', 'css', 'styles', 'scripts']);
 
 // Release creates a clean distribution package under `dist` after running build, clean, and wipe in sequence
 gulp.task('dist', ['dist-images']);
