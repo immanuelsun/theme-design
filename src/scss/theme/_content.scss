@@ -564,7 +564,7 @@ ol.children { list-style-type: none;}
 
 /* Featured Image */
 .single-post-thumbnail {
-    background:      url(images/pattern.svg) repeat;
+    background:  url(images/pattern.svg) repeat;
 
     img {
         display: block;
@@ -579,10 +579,9 @@ ol.children { list-style-type: none;}
     }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1820px) {
+@media screen and (min-width: 1441px) and (max-width: 1820px) {
     .image-shifter {
         margin-right: $size__sidebar-width;
-        float: right;
         width: 100%;
         float: right;
     }
