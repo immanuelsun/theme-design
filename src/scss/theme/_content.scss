@@ -579,7 +579,7 @@ ol.children { list-style-type: none;}
     }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1820px) {
+@media screen and (min-width: 1441pgux) and (max-width: 1820px) {
     .image-shifter {
         margin-right: $size__sidebar-width;
         float: right;
@@ -603,10 +603,12 @@ ol.children { list-style-type: none;}
 .small-index-thumbnail {
     margin-top: -1em;
     margin-bottom: 1em;
-    text-align: center;
+    // text-align: center;
 
-    a img {
-        width: 100%;
+    a {
+        img {
+            width: 100%;
+        }
     }
 }
 

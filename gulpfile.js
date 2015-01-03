@@ -180,7 +180,7 @@ gulp.task('server', ['build'], function() {
 
 // Watch task: build stuff when files are modified, livereload when anything in the `build` or `dist` folders change
 gulp.task('watch', ['server'], function() {
-  gulp.watch(source+'layouts/**/*.scss', ['css']);
+  gulp.watch(source+'layouts/**/*.css', ['css']);
   gulp.watch(source+'scss/**/*.scss', ['styles']);
   gulp.watch([source+'js/*.js', source+'js/**/*.js', bower+'**/*.js'], ['scripts']);
   gulp.watch(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)', ['images']);
